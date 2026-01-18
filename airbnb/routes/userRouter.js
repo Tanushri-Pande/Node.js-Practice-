@@ -1,0 +1,15 @@
+//core Module
+const path=require('path');
+
+//External Modules
+const express=require('express');
+const userRouter=express.Router();
+
+//local module
+const rootdir=require("../utils/pathUtils");
+
+userRouter.get("/",(req,res,next)=>{
+    res.sendFile(path.join(rootdir,'views','home.html'));
+});
+
+module.exports=userRouter;
